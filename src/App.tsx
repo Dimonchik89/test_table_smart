@@ -4,7 +4,6 @@ import { ErrorComponent, Layout, Spinner, TableComponent } from "./components"
 import { initialUsers, fetchUsers } from "./store/filteredSlice/filteredSlice"
 import { resultUser, isLoading, isError, error, allUsers } from "./store/filteredSlice/selectors"
 import { AppDispatch } from "./store/store"
-import { useGetUsersQuery } from "./store/userApi/userApi"
 
 import { bindActionCreators } from "@reduxjs/toolkit"
 import { ConnectedProps, connect } from "react-redux"
@@ -12,9 +11,7 @@ import { createStructuredSelector } from "reselect"
 
 interface Props extends PropsFromRedux {}
 
-const App: React.FC<Props> = ({ initialUsers, resultUser, fetchUsers, allUsers, error, isError, isLoading }) => {
-	console.log(error)
-
+const App: React.FC<Props> = ({ resultUser, fetchUsers, error, isError, isLoading }) => {
 	useEffect(() => {
 		fetchUsers()
 	}, [])

@@ -1,14 +1,12 @@
 import filteredReducer from "./filteredSlice/filteredSlice"
-import { userApi } from "./userApi/userApi"
 
 import { configureStore } from "@reduxjs/toolkit"
 
 const store = configureStore({
 	reducer: {
-		[userApi.reducerPath]: userApi.reducer,
 		filteredReducer: filteredReducer,
 	},
-	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(userApi.middleware),
+	middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 	devTools: process.env.NODE_ENV !== "production",
 })
 
