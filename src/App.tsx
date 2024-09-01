@@ -1,10 +1,8 @@
-import { ErrorComponent, Layout, Spinner } from "./components"
+import { ErrorComponent, Layout, Spinner, TableComponent } from "./components"
 import { useGetUsersQuery } from "./store/userApi/userApi"
 
 function App() {
 	const { data, isError, isLoading, error } = useGetUsersQuery()
-
-	console.log(data)
 
 	if (isLoading) {
 		return <Spinner />
@@ -18,7 +16,11 @@ function App() {
 		}
 	}
 
-	return <Layout></Layout>
+	return (
+		<Layout>
+			<TableComponent users={data!} />
+		</Layout>
+	)
 }
 
 export default App

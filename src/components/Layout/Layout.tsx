@@ -6,7 +6,7 @@ interface Props extends PropsWithChildren {}
 
 const Layout: React.FC<Props> = ({ children }) => {
 	return (
-		<main className="min-h-screen flex flex-col">
+		<main className="min-h-screen flex flex-col bg-gray-900">
 			<Header />
 			<div className="flex-auto">{children}</div>
 			<Footer />
