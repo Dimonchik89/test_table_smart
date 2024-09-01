@@ -1,8 +1,5 @@
-import React from "react"
-
 import { TableHeadItem } from "../.."
 import { tableHeadArr } from "../../../data/tableHead"
-import { ITableHeadItem } from "../../../types/tableHead"
 
 const TableHead = () => {
 	const content = tableHeadArr.map((item) => <TableHeadItem key={item.inputName} {...item} />)
